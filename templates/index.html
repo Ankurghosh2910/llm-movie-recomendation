@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Magic | AI Movie Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="noise-overlay"></div>
+    
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="logo">🎬 Movie Magic</div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="hero-section">
+            <h1 class="main-title">Discover Your Next Favorite Movie</h1>
+            <p class="subtitle">Powered by AI to find the perfect movies just for you</p>
+        </div>
+
+        <div class="glass-card recommendation-form">
+            <div class="form-header">
+                <h2>Tell us what you like</h2>
+                <p class="instruction">Share your movie preferences and let our AI find the perfect matches</p>
+                <p class="example">Try: "Sci-fi movies with deep philosophical themes" or "Feel-good comedies from the 90s"</p>
+            </div>
+            
+            <div class="input-group">
+                <textarea 
+                    id="preferences" 
+                    placeholder="What kind of movies do you enjoy?"
+                    class="preference-input"
+                ></textarea>
+                <button onclick="getRecommendations()" class="gradient-button">
+                    <span class="button-text">Get Recommendations</span>
+                    <span class="button-icon">→</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p>Finding perfect matches for you...</p>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="results" class="results hidden">
+            <h2 class="results-title">Your Curated Selection</h2>
+            <div id="recommendations-list" class="movie-grid"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Made with ❤️ by Movie Magic</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
